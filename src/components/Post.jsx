@@ -16,7 +16,6 @@ export default function Post(props) {
       <div>
         {new Date(props.created).toLocaleDateString('ru-RU', dateOptions)}
       </div>
-      {/* <div className="post-delete">✗</div> */}
     </div>
   )
 }

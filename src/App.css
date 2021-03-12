@@ -1,3 +1,7 @@
+.nav-link {
+  margin-left: 20px;
+}
+
 .posts-container {
   padding: 20px;
 }
@@ -15,10 +19,44 @@
   margin-top: 5px;
 }
 
-.post-delete {
+.new-post-wrapper {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 50px;
+}
+
+.new-post-form {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 30px;
+
+  border: 1px solid;
+}
+
+.new-post-content {
+  width: 25em;
+  height: 6em;
+
+  font-size: 16px;
+}
+
+.new-post-submit-btn {
+  margin: 5px 5px 0;
+  padding: 5px;
+
+  font-size: 16px;
+}
+
+.new-post-close {
   position: absolute;
   top: 5px;
   right: 5px;
 
-  cursor: pointer;
+  font-size: 20px;
 }

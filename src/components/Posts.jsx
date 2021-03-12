@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Post from './Post';
+import PostsContext from '../contexts/PostsContext';
+
 
 export default function Posts() {
-  const [posts, setPosts] = useState([]);
+  const { posts, setPosts } = useContext(PostsContext);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -21,7 +23,7 @@ export default function Posts() {
     }
 
     fetchPosts();
-  }, []);
+  }, [setPosts]);
 
   // const deletePost = async id => {
   //   const response = fetch(process.env.REACT_APP_POSTS + '/' + id, {
@@ -34,7 +36,7 @@ export default function Posts() {
       <div className="posts-container">
         {posts.map(post => <Post {...post} key={post.id} />)}
       </div>
-      <Link to="/posts/new">New post</Link>
+      <Link className="nav-link" to="/posts/new">New post</Link>
     </>
   )
 }

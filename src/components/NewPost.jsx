@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function NewPost(props) {
   const [newPost, setNewPost] = useState({ id: 0, content: '' });
@@ -21,9 +22,21 @@ export default function NewPost(props) {
   }
 
   return (
-    <form className="new-post-form" onSubmit={submitHandler}>
-      <textarea className="new-post-content" name="content" value={newPost.content} onChange={inputHandler} />
-      <button className="new-post-submit-btn" type="submit">Add</button>
-    </form>
+    <div className="new-post-wrapper">
+      <form className="new-post-form" onSubmit={submitHandler}>
+        <textarea
+          className="new-post-content"
+          name="content"
+          placeholder="New post content"
+          autoFocus={true}
+          value={newPost.content}
+          onChange={inputHandler}
+        />
+        <button className="new-post-submit-btn" type="submit">
+          Add
+        </button>
+        <Link to="/"><div className="new-post-close">✗</div></Link>
+      </form>
+    </div>
   )
 }
