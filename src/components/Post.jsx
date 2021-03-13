@@ -8,10 +8,18 @@ const dateOptions = {
 };
 
 export default function Post(props) {
+  if (!props.id) return (
+    <div className="post-container">
+      Post not found.
+    </div>
+  )
+
   return (
     <div className="post-container">
       <div>
-        {props.content}
+        <pre>
+          {props.content}
+        </pre>
       </div>
       <div>
         {new Date(props.created).toLocaleDateString('ru-RU', dateOptions)}

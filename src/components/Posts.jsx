@@ -25,16 +25,16 @@ export default function Posts() {
     fetchPosts();
   }, [setPosts]);
 
-  // const deletePost = async id => {
-  //   const response = fetch(process.env.REACT_APP_POSTS + '/' + id, {
-  //     method: 'DELETE',
-  //   });
-  // }
-
   return (
     <>
       <div className="posts-container">
-        {posts.map(post => <Post {...post} key={post.id} />)}
+        {posts.map(post => {
+          return (
+            <Link to={`/posts/${post.id}`} key={post.id}>
+              <Post {...post} />
+            </Link>
+          )
+        })}
       </div>
       <Link className="nav-link" to="/posts/new">New post</Link>
     </>

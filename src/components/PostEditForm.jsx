@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function NewPost(props) {
-  const [newPost, setNewPost] = useState({ id: 0, content: '' });
+  const [newPost, setNewPost] = useState({ id: props.id || 0, content: props.content || '' });
 
   const submitHandler = async event => {
     event.preventDefault();
@@ -27,13 +27,13 @@ export default function NewPost(props) {
         <textarea
           className="new-post-content"
           name="content"
-          placeholder="New post content"
+          placeholder="Post content"
           autoFocus={true}
           value={newPost.content}
           onChange={inputHandler}
         />
         <button className="new-post-submit-btn" type="submit">
-          Add
+          {props.id ? 'Submit' : 'Add'}
         </button>
         <Link to="/"><div className="new-post-close">✗</div></Link>
       </form>

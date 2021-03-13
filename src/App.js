@@ -1,15 +1,19 @@
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Posts from './components/Posts';
-import NewPost from './components/NewPost';
+import PostEditForm from './components/PostEditForm';
+import PostActions from './components/PostActions';
 import { PostsProvider } from './contexts/PostsContext';
 
 function App() {
   return (
     <Router>
       <PostsProvider>
-        <Route exact path="/" component={Posts} />
-        <Route path="/posts/new" component={NewPost} />
+        <Switch>
+          <Route path="/posts/new" component={PostEditForm} />
+          <Route path="/posts/:id" component={PostActions} />
+          <Route path="/" component={Posts} />
+        </Switch>
       </PostsProvider>
     </Router>
   );

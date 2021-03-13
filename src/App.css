@@ -60,3 +60,36 @@
 
   font-size: 20px;
 }
+
+.post-actions-wrapper {
+  display: inline-block;
+  padding: 20px;
+}
+
+.post-actions-container {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 10px;
+}
+
+.post-action-btn {
+  padding: 5px;
+
+  border: 1px solid;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.post-action-btn:nth-of-type(n + 2) {
+  margin-left: 10px;
+}
+
+.btn-edit {
+  background-color: rgba(135, 228, 135, 0.5);
+}
+
+.btn-delete {
+  background-color: rgba(228, 146, 135, 0.5);
+}
