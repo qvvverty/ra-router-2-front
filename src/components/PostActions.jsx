@@ -4,7 +4,6 @@ import NewPost from './PostEditForm';
 import Post from './Post';
 
 export default function PostActions(props) {
-  console.log(props)
   const [isEditing, setEditing] = useState(false);
 
   const { posts } = useContext(PostContext);
@@ -30,9 +29,9 @@ export default function PostActions(props) {
       {isEditing ?
       <NewPost {...post} {...props} />
       : <div className="post-actions-container">
-        <div className="post-action-btn btn-edit" onClick={editBtnHandler}>Edit</div>
-        <div className="post-action-btn btn-delete" onClick={deleteBtnHandler}>Delete</div>
-      </div>}
+          <div className="post-action-btn btn-edit" onClick={editBtnHandler}>Edit</div>
+          <div className="post-action-btn btn-delete" onClick={deleteBtnHandler}>Delete</div>
+        </div>}
     </div>
   )
 }

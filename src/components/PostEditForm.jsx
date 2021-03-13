@@ -22,20 +22,20 @@ export default function NewPost(props) {
   }
 
   return (
-    <div className="new-post-wrapper">
-      <form className="new-post-form" onSubmit={submitHandler}>
+    <div className="post-edit-wrapper">
+      <form className="post-edit-form" onSubmit={submitHandler}>
         <textarea
-          className="new-post-content"
+          className="post-edit-content"
           name="content"
           placeholder="Post content"
           autoFocus={true}
           value={newPost.content}
           onChange={inputHandler}
         />
-        <button className="new-post-submit-btn" type="submit">
+        <button className="post-edit-submit-btn post-action-btn btn-edit" type="submit">
           {props.id ? 'Submit' : 'Add'}
         </button>
-        <Link to="/"><div className="new-post-close">✗</div></Link>
+        <Link to="/" className="link"><div className="post-edit-close">✗</div></Link>
       </form>
     </div>
   )

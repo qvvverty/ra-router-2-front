@@ -25,18 +25,24 @@ export default function Posts() {
     fetchPosts();
   }, [setPosts]);
 
+  // const { posts } = useContext(PostsContext);
+
   return (
     <>
       <div className="posts-container">
         {posts.map(post => {
           return (
-            <Link to={`/posts/${post.id}`} key={post.id}>
+            <Link className="link" to={`/posts/${post.id}`} key={post.id}>
               <Post {...post} />
             </Link>
           )
         })}
+        <Link className="link nav-link" to="/posts/new">
+          <div className="post-action-btn btn-edit">
+            New post
+          </div>
+        </Link>
       </div>
-      <Link className="nav-link" to="/posts/new">New post</Link>
     </>
   )
 }

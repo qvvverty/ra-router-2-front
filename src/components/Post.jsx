@@ -16,12 +16,10 @@ export default function Post(props) {
 
   return (
     <div className="post-container">
-      <div>
-        <pre>
-          {props.content}
-        </pre>
-      </div>
-      <div>
+      <pre className="post-content">
+        {props.content}
+      </pre>
+      <div className="post-date">
         {new Date(props.created).toLocaleDateString('ru-RU', dateOptions)}
       </div>
     </div>
