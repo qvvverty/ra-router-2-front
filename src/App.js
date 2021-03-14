@@ -7,12 +7,13 @@ import { PostsProvider } from './contexts/PostsContext';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ra-router-2-front">
       <PostsProvider>
         <Switch>
           <Route path="/posts/new" component={PostEditForm} />
           <Route path="/posts/:id" component={PostActions} />
           <Route path="/" component={Posts} />
+          <Route path="*" component={Posts} />
         </Switch>
       </PostsProvider>
     </Router>
